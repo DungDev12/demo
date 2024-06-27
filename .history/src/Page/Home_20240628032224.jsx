@@ -3,7 +3,6 @@ import "./style.scss";
 import { useState } from "react";
 import Rule from "./Content/Rule/Rule";
 import History from "./Content/History/History";
-import TopPlayer from "./Content/History/TopPlayer";
 
 const Home = () => {
   const [pageCategory, setPageCategory] = useState(null);
@@ -139,7 +138,6 @@ const Home = () => {
             </div>
           </div>
           <History />
-          <TopPlayer />
           <Rule />
         </div>
       </div>

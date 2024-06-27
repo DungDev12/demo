@@ -18,7 +18,7 @@ const Rule = () => {
   // }, []);
   return (
     <>
-      <div className="border-[#F0AD4E] border-[1px] rounded-[4px] text-center p-[5px] mt-[26px]">
+      <div className="border-[#F0AD4E] border-[1px] rounded-[4px] text-center p-[5px]">
         <h4 className="mb-[10px]">
           <strong>
             1 .&nbsp;
