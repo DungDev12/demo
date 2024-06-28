@@ -1,0 +1,14 @@
+const Footer = () => {
+  return (
+    <>
+      <div className="text-center mt-[24px] py-[20px] min-h-[124px] bg-[#E77F08] text-[#FFFFFF]">
+        <div className="pb-[9px]">
+          Copyright 2023 © CLMM.BET | All rights reserved
+        </div>
+        <div></div>
+      </div>
+    </>
+  );
+};
+
+export default Footer;
