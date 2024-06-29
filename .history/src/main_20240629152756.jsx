@@ -1,0 +1,20 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { NextUIProvider } from "@nextui-org/react";
+import { BrowserRouter } from "react-router-dom";
+import AppContext from "./App/AppContext.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+  <AppContext>
+
+    <BrowserRouter>
+      <NextUIProvider>
+        <App />
+      </NextUIProvider>
+    </BrowserRouter>
+  </AppContext>
+  </React.StrictMode>
+);
