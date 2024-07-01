@@ -17,7 +17,9 @@ const AppContext = ({ children }) => {
   const [dataContact, setDataContact] = useState(null);
   const fetchTableHowPlay = async (id) => {
     try {
-      const response = await axios.post(`${apiUrl}/how-play/${id}`);
+      const response = await axios.post(
+        `$/how-play/${id}`
+      );
       //   console.log(response);
       if (response.status === 200) {
         setDb(response.data);

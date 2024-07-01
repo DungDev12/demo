@@ -5,7 +5,6 @@ const Context = createContext();
 export const useAuth = () => {
   return useContext(Context);
 };
-const apiUrl = import.meta.env.VITE_API;
 
 const AppContext = ({ children }) => {
   const [db, setDb] = useState(null);
@@ -17,7 +16,9 @@ const AppContext = ({ children }) => {
   const [dataContact, setDataContact] = useState(null);
   const fetchTableHowPlay = async (id) => {
     try {
-      const response = await axios.post(`${apiUrl}/how-play/${id}`);
+      const response = await axios.post(
+        `http://localhost:5000/api/how-play/${id}`
+      );
       //   console.log(response);
       if (response.status === 200) {
         setDb(response.data);
@@ -29,6 +30,7 @@ const AppContext = ({ children }) => {
     }
   };
   const fetchCategory = async () => {
+    console.log(apiUrl);
     try {
       const response = await axios.get(`${apiUrl}/menu`);
       // console.log(response.data);
@@ -48,7 +50,9 @@ const AppContext = ({ children }) => {
   }, []);
   const fetchAPI = async () => {
     try {
-      const response = await axios.post(`${apiUrl}/load-settings`);
+      const response = await axios.post(
+        "http://localhost:5000/api/load-settings"
+      );
       if (response.status === 200) {
         // console.log(response.data._rules);
         setHistoryData(response.data._historyBetGame);

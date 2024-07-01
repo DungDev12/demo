@@ -3,7 +3,6 @@ import { routesAPI } from "./routes/routes";
 import { Fragment } from "react";
 import Layout from "./Page/Layout";
 function App() {
-  
   return (
     <>
       <Routes>

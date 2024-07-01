@@ -2,10 +2,10 @@ import { createContext, useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 const Context = createContext();
+const apiUrl = process.REACT_APP_API_URL;
 export const useAuth = () => {
   return useContext(Context);
 };
-const apiUrl = import.meta.env.VITE_API;
 
 const AppContext = ({ children }) => {
   const [db, setDb] = useState(null);
@@ -17,7 +17,9 @@ const AppContext = ({ children }) => {
   const [dataContact, setDataContact] = useState(null);
   const fetchTableHowPlay = async (id) => {
     try {
-      const response = await axios.post(`${apiUrl}/how-play/${id}`);
+      const response = await axios.post(
+        `http://localhost:5000/api/how-play/${id}`
+      );
       //   console.log(response);
       if (response.status === 200) {
         setDb(response.data);
@@ -36,7 +38,7 @@ const AppContext = ({ children }) => {
         setCategory(response.data.category);
         setGetCode(response.data.code);
       } else {
-        console.log("Lỗi khi lấy dữ liệu");
+        console.log("L��i khi lấy dữ liệu");
       }
     } catch (err) {
       console.log(err);
@@ -48,7 +50,9 @@ const AppContext = ({ children }) => {
   }, []);
   const fetchAPI = async () => {
     try {
-      const response = await axios.post(`${apiUrl}/load-settings`);
+      const response = await axios.post(
+        "http://localhost:5000/api/load-settings"
+      );
       if (response.status === 200) {
         // console.log(response.data._rules);
         setHistoryData(response.data._historyBetGame);
