@@ -18,16 +18,17 @@ const AppContext = ({ children }) => {
   const fetchTableHowPlay = async (id) => {
     try {
       const response = await axios.post(`${apiUrl}/how-play/${id}`);
-      //   console.log(response);
+      // console.log(response);
       if (response.status === 200) {
-        setDb(response.data);
+        return setDb(response.data);
       } else if (response.status === 204) {
-        setDb(null);
+        return setDb(null);
       }
     } catch (error) {
-      console.error("Error:", error);
+      return console.log("Error:", error);
     }
   };
+
   const fetchCategory = async () => {
     try {
       const response = await axios.get(`${apiUrl}/menu`);
@@ -42,6 +43,7 @@ const AppContext = ({ children }) => {
       console.log(err);
     }
   };
+
   useEffect(() => {
     fetchCategory();
     fetchAPI();

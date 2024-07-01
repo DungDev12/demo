@@ -92,7 +92,7 @@ const Bet = () => {
   };
   const handleBet = async (e) => {
     try {
-      console.log(betPrice);
+      // console.log(betPrice);
       const response = await axios.post("https://clmm.bet/api/betting-game", {
         amount: betPrice.amount,
         game: e,
@@ -114,10 +114,6 @@ const Bet = () => {
     } catch (err) {
       console.log(err);
     }
-    // MySwal.fire({
-    //   icon: "error",
-    //   title: "Oops...",
-    // });
   };
   return (
     <>

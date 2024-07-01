@@ -22,5 +22,14 @@ export default defineConfig({
         },
       },
     },
+    css: {
+    postcss: {
+      plugins: [
+        purgecss({
+          content: ['./src/**/*.jsx', './public/index.html'],
+          defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+        })
+      ]
+    }
   },
 });
